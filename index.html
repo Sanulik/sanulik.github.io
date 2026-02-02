@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Biotechnology Student</title>
+    <style>
+        /* --- COLOR PALETTE (Browns & Neutrals) --- */
+        :root {
+            --bg-color: #FDFBF7;        /* Off-white Cream */
+            --text-main: #4A4036;       /* Dark Coffee */
+            --text-light: #8C7B6C;      /* Muted Taupe */
+            --accent: #A68B73;          /* Latte/Clay */
+            --card-bg: #FFFFFF;         /* White */
+            --footer-bg: #2C241B;       /* Deep Espresso */
+            --nav-bg: rgba(253, 251, 247, 0.95);
+        }
+
+        /* --- GLOBAL STYLES --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 { font-weight: 600; letter-spacing: -0.5px; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; padding: 0; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--nav-bg);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul { display: flex; gap: 2rem; }
+        nav a { font-size: 0.9rem; font-weight: 500; color: var(--text-main); }
+        nav a:hover { color: var(--accent); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #F2EFE9 0%, #FDFBF7 70%);
+            padding: 0 20px;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--footer-bg);
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+        }
+        .btn {
+            margin-top: 2rem;
+            padding: 0.8rem 2rem;
+            background-color: var(--footer-bg);
+            color: white;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        .btn:hover { background-color: var(--accent); transform: translateY(-2px); }
+
+        /* --- SECTIONS --- */
+        section { padding: 4rem 20px; max-width: 1000px; margin: 0 auto; }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+
+        /* --- ABOUT & EDUCATION --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .profile-img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 20px 20px 0px var(--accent);
+        }
+        .timeline-item {
+            border-left: 2px solid var(--accent);
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .timeline-date { font-size: 0.85rem; color: var(--accent); font-weight: bold; }
+
+        /* --- PROJECTS (CARDS) --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            transition: 0.3s;
+            border: 1px solid #EEE;
+        }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.08); }
+        .card h3 { margin-top: 0; color: var(--footer-bg); }
+        .tag {
+            display: inline-block;
+            background: #F2EFE9;
+            color: var(--text-light);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-top: 1rem;
+            margin-right: 5px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--footer-bg);
+            color: #E6DMD3;
+            text-align: center;
+            padding: 3rem 20px;
+            margin-top: 4rem;
+        }
+        footer p { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+        .social-links a { color: white; margin: 0 10px; font-weight: bold; }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Hello, I'm [Your Name]</h1> 
+        <p>Undergraduate Biotechnology Student | Science Enthusiast</p>
+        <a href="#projects" class="btn">View My Work</a>
+    </header>
+
+    <section id="about">
+        <div class="section-title">About Me</div>
+        <div class="about-grid">
+            <div>
+                <img src="https://via.placeholder.com/400x400.png?text=Your+Photo" alt="Profile" class="profile-img">
+            </div>
+            <div>
+                <h3>Biotech Student & Researcher</h3>
+                <p>I am a first-year undergraduate student in Biotechnology with a passion for industrial applications and chemical processes. I have a strong interest in recombinant DNA technology and the chemistry behind titration.</p>
+                <br>
+                <h3>Education</h3>
+                <div class="timeline-item">
+                    <div class="timeline-date">2026 - Present</div>
+                    <strong>BSc (Hons) in Biotechnology</strong><br>
+                    [Your University Name]
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 - 2026</div>
+                    <strong>Secondary Education</strong><br>
+                    [Your School Name]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-title">Academic Projects</div>
+        <div class="project-grid">
+            
+            <div class="card">
+                <h3>Recombinant DNA Poster</h3>
+                <p>Designed a scientific poster illustrating the workflow of recombinant DNA processes, focusing on <em>Ideonella sakaiensis</em> and industrial bioreactors.</p>
+                <span class="tag">Biotech</span>
+                <span class="tag">Design</span>
+            </div>
+
+            <div class="card">
+                <h3>Enzyme Catalysis Report</h3>
+                <p>Conducted an experiment using potato-derived enzymes to study catalysis rates. Analyzed data to determine optimal reaction conditions.</p>
+                <span class="tag">Lab Report</span>
+                <span class="tag">Data Analysis</span>
+            </div>
+
+            <div class="card">
+                <h3>Viome Methodology Video</h3>
+                <p>Collaborated on a group presentation analyzing the validation and methodology of Viome's biotech services.</p>
+                <span class="tag">Research</span>
+                <span class="tag">Presentation</span>
+            </div>
+
+             <div class="card">
+                <h3>Tropical Rainforest Terrarium</h3>
+                <p>Created a simulated ecosystem model demonstrating the Hierarchy of Life, diversity, and nomenclature in a rainforest environment.</p>
+                <span class="tag">Ecology</span>
+                <span class="tag">Modeling</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-title">Technical Skills</div>
+        <div style="text-align: center;">
+            <span class="tag" style="font-size: 1rem; padding: 10px 20px;">Titration & Chemistry</span>
+            <span class="tag" style="font-size: 1rem; padding: 10px 20px;">Microscopy</span>
+            <span class="tag" style="font-size: 1rem; padding: 10px 20px;">Lab Safety</span>
+            <span class="tag" style="font-size: 1rem; padding: 10px 20px;">Scientific Writing</span>
+            <span class="tag" style="font-size: 1rem; padding: 10px 20px;">GitHub & Markdown</span>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-title">Let's Connect</div>
+        <div style="text-align: center;">
+            <p>I am open to internships and research opportunities.</p>
+            <br>
+            <a href="mailto:your.email@example.com" class="btn">Email Me</a>
+            <br><br><br>
+            <a href="resume.pdf" style="text-decoration: underline; color: var(--accent);">Download My Resume (PDF)</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="#">GitHub</a>
+            <a href="#">LinkedIn</a>
+        </div>
+        <br>
+        <p>&copy; 2026 [Your Name]. Built for SC1172.</p>
+    </footer>
+
+</body>
+</html>
