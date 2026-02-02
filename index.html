@@ -106,11 +106,18 @@
             align-items: center;
         }
         .CV Profile Picture.jpeg {
-            width: 20%;
-            border-radius: 20px;
+        
+            width: 250px;           /* Sets a fixed, smaller size */
+            height: 250px;          /* Keeps it a perfect square */
+            object-fit: cover;      /* Ensures the photo doesn't stretch or look weird */
+            border-radius: 50%;     /* Optional: Makes it a circle (remove this line if you want a square) */
+            
             /* Accent colored shadow */
             box-shadow: 20px 20px 0px rgba(212, 180, 149, 0.2); 
             opacity: 0.9;
+            display: block;
+            margin: 0 auto;         /* Centers the image */
+        
         }
         .timeline-item {
             border-left: 2px solid var(--accent);
