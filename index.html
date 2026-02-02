@@ -69,15 +69,19 @@
             color: var(--text-light);
             max-width: 700px;
         }
+        /* Button Style (Used for Resume) */
         .btn {
-            margin-top: 2rem;
-            padding: 0.8rem 2rem;
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 2.5rem;
             background-color: var(--accent);
             color: var(--bg-color);
             border-radius: 50px;
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: bold;
             letter-spacing: 1px;
+            cursor: pointer;
+            border: none;
         }
         .btn:hover { 
             background-color: #E6DCD3; 
@@ -87,46 +91,70 @@
 
         /* --- SECTIONS --- */
         section { padding: 4rem 20px; max-width: 1000px; margin: 0 auto; }
+        
+        /* UPDATED SUBHEADINGS: More visual impact */
         .section-title {
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 3rem;
-            color: var(--accent);
+            font-size: 2.2rem; /* Larger size */
+            margin-bottom: 3.5rem;
+            color: var(--text-main);
             text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.9rem;
+            letter-spacing: 3px;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        /* Add a gold underline to headings */
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            margin: 10px auto 0;
+            border-radius: 2px;
         }
 
-        /* --- ABOUT, EDUCATION & WORK --- */
+        /* --- ABOUT (Split Layout) --- */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
+            margin-bottom: 4rem;
         }
         
-        /* UPDATED IMAGE STYLE: Centered Frame */
         .profile-img {
             width: 250px;
             height: 250px;
             object-fit: cover;      
             border-radius: 50%;     
-            border: 2px solid var(--card-bg); 
+            border: 8px solid var(--card-bg); 
             box-shadow: 0 0 0 4px var(--accent); 
             opacity: 1;             
             display: block;
             margin: 0 auto;         
         }
 
-        .timeline-item {
-            border-left: 2px solid var(--accent);
-            padding-left: 1.5rem;
-            margin-bottom: 2rem;
+        /* --- EDUCATION (Separate Section) --- */
+        .education-box {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
         }
-        .timeline-date { font-size: 0.85rem; color: var(--accent); font-weight: bold; }
-        .timeline-item ul { margin-top: 0.5rem; list-style: disc; padding-left: 1.2rem; color: var(--text-light); font-size: 0.9rem;}
 
-        /* --- PROJECTS (CARDS) --- */
+        .timeline-item {
+            border-left: 3px solid var(--accent); /* Thicker line */
+            padding-left: 2rem;
+            margin-bottom: 2.5rem;
+        }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-date { font-size: 0.9rem; color: var(--accent); font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+        .timeline-item h4 { margin: 5px 0; font-size: 1.2rem; }
+
+        /* --- PROJECTS & CARDS --- */
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -148,7 +176,7 @@
             border-color: var(--accent);
             box-shadow: 0 15px 40px rgba(0,0,0,0.4); 
         }
-        .card h3 { margin-top: 0; color: var(--text-main); }
+        .card h3 { margin-top: 0; color: var(--text-main); font-size: 1.3rem; }
         .card p { color: var(--text-light); font-size: 0.95rem; }
         
         .tag {
@@ -190,6 +218,7 @@
     <nav>
         <ul>
             <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -198,33 +227,38 @@
     </nav>
 
     <header class="hero">
-        <h1>Hello, I'm Sanuli Kehara Samarasinghe</h1> 
+        <h1>Hello, I'm Sanuli Samarasinghe</h1> 
         <p>Bridging Science & Humanities | Environmental Policy & R&D Specialist</p>
-        <a href="#projects" class="btn">View My Work</a>
+        <a href="#about" class="btn" style="background: transparent; border: 2px solid var(--accent); color: var(--accent);">Learn More</a>
     </header>
 
     <section id="about">
         <div class="section-title">About Me</div>
         <div class="about-grid">
             <div>
-                <img src="Portfolio Image.jpeg" alt="Sanuli Kehara" class="profile-img">
+                <img src="Portfolio Image.jpeg" alt="Sanuli Samarasinghe" class="profile-img">
             </div>
             <div>
                 <h3>Intersection of Science & Policy</h3>
                 <p>I position myself at the unique intersection of rigorous science and the humanities. With a background in <strong>Biotechnology</strong> and a passion for <strong>Environmental Policy</strong>, I aim to translate complex laboratory data into actionable R&D solutions that are ethically sound and politically viable.</p>
                 <p style="margin-top: 10px;">My experience ranges from conducting ELISA experiments in the lab to leading international Model UN conferences, giving me the ability to adapt to diverse perspectives and solve multidimensional problems.</p>
-                <br>
-                <h3>Education</h3>
-                <div class="timeline-item">
-                    <div class="timeline-date">Present</div>
-                    <strong>BSc (Hons) in Biotechnology</strong><br>
-                    Sri Lanka Institute of Information Technology (SLIIT) </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2024</div>
-                    <strong>Secondary Education</strong><br>
-                    Musaeus College<br>
-                    <span style="font-size: 0.85rem; color: var(--text-light);">Edexcel A Levels: English (B), Chemistry, Physics, Mathematics</span>
-                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="section-title">Education</div>
+        <div class="education-box">
+            <div class="timeline-item">
+                <div class="timeline-date">Present</div>
+                <h4>BSc (Hons) in Biotechnology</h4>
+                <p>Sri Lanka Institute of Information Technology (SLIIT)</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2024</div>
+                <h4>Secondary Education</h4>
+                <p>Musaeus College</p>
+                <span style="font-size: 0.9rem; color: var(--text-light); display:block; margin-top:5px;">Edexcel A Levels: English (B), Chemistry, Physics, Mathematics</span>
             </div>
         </div>
     </section>
@@ -235,7 +269,8 @@
         <div class="card" style="margin-bottom: 2rem;">
             <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
                 <h3>Intern | Allergy, Immunology and Cell Biology Unit</h3>
-                <span style="color: var(--accent); font-weight: bold;">Aug 2025</span> </div>
+                <span style="color: var(--accent); font-weight: bold;">Aug 2025</span>
+            </div>
             <p><strong>University of Sri Jayewardenepura</strong></p>
             <ul style="margin-top: 1rem; padding-left: 1.2rem; list-style: disc; color: var(--text-light);">
                 <li>Conducted laboratory-based research including <strong>blood sampling</strong>, <strong>PBMC separation</strong>, and <strong>TruCulture assays</strong>.</li>
@@ -243,8 +278,8 @@
                 <li>Developed skills in research documentation and adhered to strict safety and quality protocols.</li>
             </ul>
             <span class="tag">R&D</span>
-            <span class="tag">Immunology</span>
-            <span class="tag">Lab Safety</span>
+            <span class="tag">Lab</span>
+            <span class="tag">Safety</span>
         </div>
     </section>
 
@@ -276,17 +311,6 @@
 
             <div class="card">
                 <div>
-                    <h3>Recombinant DNA Poster</h3>
-                    <p>Designed a scientific poster illustrating the workflow of recombinant DNA processes, focusing on <em>Ideonella sakaiensis</em> and industrial bioreactors.</p>
-                </div>
-                <div>
-                    <span class="tag">Biotech</span>
-                    <span class="tag">Design</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
                     <h3>Queen's Commonwealth Essay</h3>
                     <p><strong>Gold Award Winner (2021)</strong><br>Demonstrated excellence in creative writing and critical thinking on global issues, reinforcing my strength in the humanities.</p>
                 </div>
@@ -299,35 +323,31 @@
     </section>
 
     <section id="skills">
-        <div class="section-title">Skills, Qualifications & Interests</div>
+        <div class="section-title">Skills & Volunteering</div>
         
-        <h3 style="text-align: center; color: var(--text-light); margin-bottom: 1rem;">Professional Qualifications</h3>
+        <h3 style="text-align: center; color: var(--text-light); margin-bottom: 1rem;">Technical & Professional Skills</h3>
         <div style="text-align: center; margin-bottom: 3rem;">
-            <span class="tag" style="font-size: 1rem; padding: 10px 20px;">Toastmasters (Level 1 & 2)</span>
-            <span class="tag" style="font-size: 1rem; padding: 10px 20px;">Western Music & Speech (Distinction)</span>
-        </div>
-
-        <h3 style="text-align: center; color: var(--text-light); margin-bottom: 1rem;">Technical Skills</h3>
-        <div style="text-align: center; margin-bottom: 3rem;">
-            <span class="tag" style="font-size: 1rem; padding: 10px 20px;">ELISA & TruCulture Assays</span>
-            <span class="tag" style="font-size: 1rem; padding: 10px 20px;">PBMC Separation</span>
+            <span class="tag" style="font-size: 1rem; padding: 10px 20px;">Project Management</span>
+            <span class="tag" style="font-size: 1rem; padding: 10px 20px;">Organising</span>
+            <span class="tag" style="font-size: 1rem; padding: 10px 20px;">Research & Analysis</span>
+            <span class="tag" style="font-size: 1rem; padding: 10px 20px;">ELISA & TruCulture</span>
             <span class="tag" style="font-size: 1rem; padding: 10px 20px;">Data Analysis</span>
-            <span class="tag" style="font-size: 1rem; padding: 10px 20px;">Report Writing</span>
         </div>
 
-        <h3 style="text-align: center; color: var(--text-light); margin-bottom: 1rem;">Hobbies & Sports</h3>
-        <div style="text-align: center;">
-             <div class="card" style="display: inline-block; text-align: left; max-width: 300px; margin: 10px; vertical-align: top;">
-                <h3>Scrabble</h3>
-                <p><strong>Junior National Qualifiers (21st Place)</strong><br>De Abrew House U-19 Team Champion (2023).</p>
+        <h3 style="text-align: center; color: var(--text-light); margin-bottom: 1rem;">Volunteering</h3>
+        <div class="project-grid">
+             <div class="card">
+                <h3>WNPS</h3>
+                <p><strong>Evaluator</strong><br>Analysed environmental data and project metrics utilizing advanced Excel analysis tools to support conservation efforts.</p>
+                <span class="tag">Excel Analysis</span>
+                <span class="tag">Environment</span>
             </div>
-            <div class="card" style="display: inline-block; text-align: left; max-width: 300px; margin: 10px; vertical-align: top;">
-                <h3>Martial Arts (Wushu)</h3>
-                <p><strong>1st Place</strong><br>Inter-house Wushu Tournament Individual Event (Five Steps) 2019.</p>
-            </div>
-             <div class="card" style="display: inline-block; text-align: left; max-width: 300px; margin: 10px; vertical-align: top;">
-                <h3>Volunteering</h3>
-                <p><strong>Justice for Animals</strong><br>Assisted in spay/neuter programs and event support.</p>
+
+             <div class="card">
+                <h3>Justice for Animals</h3>
+                <p><strong>Volunteer</strong><br>Assisted in spay/neuter programs and event support.</p>
+                <span class="tag">Animal Welfare</span>
+                <span class="tag">Support</span>
             </div>
         </div>
     </section>
@@ -337,10 +357,12 @@
         <div class="contact-box">
             <p>I am open to internships focused on R&D, Environmental Policy, and Biotechnology.</p>
             <br>
-            <a href="mailto:sanulikehara@gmail.com" class="btn">Email Me</a>
-            <br><br><br>
             
-            <a href="HS25510551_CV.pdf" download style="text-decoration: underline; color: var(--accent);">Download My Resume (PDF)</a>
+            <a href="HS25510551_CV.pdf" download class="btn">Download My Resume</a>
+            
+            <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--text-light);">
+                Or email me at: <a href="mailto:sanulikehara@gmail.com" style="text-decoration: underline;">sanulikehara@gmail.com</a>
+            </p>
         </div>
     </section>
 
@@ -350,7 +372,7 @@
             <a href="#">LinkedIn</a>
         </div>
         <br>
-        <p>&copy; 2026 Sanuli Kehara Samarasinghe. Built for SC1172.</p>
+        <p>&copy; 2026 Sanuli Samarasinghe. Built for SC1172.</p>
     </footer>
 
 </body>
