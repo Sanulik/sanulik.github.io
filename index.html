@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Biotechnology Student</title>
     <style>
-        /* --- COLOR PALETTE (Browns & Neutrals) --- */
+        /* --- DARK MODE THEME (Espresso & Cream) --- */
         :root {
-            --bg-color: #FDFBF7;        /* Off-white Cream */
-            --text-main: #4A4036;       /* Dark Coffee */
-            --text-light: #8C7B6C;      /* Muted Taupe */
-            --accent: #A68B73;          /* Latte/Clay */
-            --card-bg: #FFFFFF;         /* White */
-            --footer-bg: #2C241B;       /* Deep Espresso */
-            --nav-bg: rgba(253, 251, 247, 0.95);
+            --bg-color: #1E1814;        /* Very Dark Espresso */
+            --text-main: #E6DCD3;       /* Warm Cream */
+            --text-light: #A3968B;      /* Muted Taupe */
+            --accent: #D4B495;          /* Latte/Gold */
+            --card-bg: #2B231E;         /* Dark Mocha */
+            --footer-bg: #120E0C;       /* Almost Black */
+            --nav-bg: rgba(30, 24, 20, 0.95);
+            --border-color: #3E3228;
         }
 
         /* --- GLOBAL STYLES --- */
@@ -37,13 +38,14 @@
             width: 100%;
             background: var(--nav-bg);
             padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
             z-index: 1000;
             display: flex;
             justify-content: center;
+            border-bottom: 1px solid var(--border-color);
         }
         nav ul { display: flex; gap: 2rem; }
-        nav a { font-size: 0.9rem; font-weight: 500; color: var(--text-main); }
+        nav a { font-size: 0.9rem; font-weight: 500; color: var(--text-light); }
         nav a:hover { color: var(--accent); }
 
         /* --- HERO SECTION --- */
@@ -54,13 +56,14 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: radial-gradient(circle at center, #F2EFE9 0%, #FDFBF7 70%);
+            /* Subtle dark gradient for depth */
+            background: radial-gradient(circle at center, #2C241F 0%, #1E1814 80%);
             padding: 0 20px;
         }
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 0.5rem;
-            color: var(--footer-bg);
+            color: var(--text-main);
         }
         .hero p {
             font-size: 1.2rem;
@@ -70,13 +73,18 @@
         .btn {
             margin-top: 2rem;
             padding: 0.8rem 2rem;
-            background-color: var(--footer-bg);
-            color: white;
+            background-color: var(--accent);
+            color: var(--bg-color); /* Dark text on light button */
             border-radius: 50px;
             font-size: 0.9rem;
+            font-weight: bold;
             letter-spacing: 1px;
         }
-        .btn:hover { background-color: var(--accent); transform: translateY(-2px); }
+        .btn:hover { 
+            background-color: #E6DCD3; 
+            transform: translateY(-2px); 
+            box-shadow: 0 0 15px rgba(212, 180, 149, 0.3);
+        }
 
         /* --- SECTIONS --- */
         section { padding: 4rem 20px; max-width: 1000px; margin: 0 auto; }
@@ -100,7 +108,9 @@
         .profile-img {
             width: 100%;
             border-radius: 20px;
-            box-shadow: 20px 20px 0px var(--accent);
+            /* Accent colored shadow */
+            box-shadow: 20px 20px 0px rgba(212, 180, 149, 0.2); 
+            opacity: 0.9;
         }
         .timeline-item {
             border-left: 2px solid var(--accent);
@@ -119,33 +129,41 @@
             background: var(--card-bg);
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             transition: 0.3s;
-            border: 1px solid #EEE;
+            border: 1px solid var(--border-color);
         }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.08); }
-        .card h3 { margin-top: 0; color: var(--footer-bg); }
+        .card:hover { 
+            transform: translateY(-5px); 
+            border-color: var(--accent);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4); 
+        }
+        .card h3 { margin-top: 0; color: var(--text-main); }
+        .card p { color: var(--text-light); }
+        
         .tag {
             display: inline-block;
-            background: #F2EFE9;
-            color: var(--text-light);
+            background: #3E3228;
+            color: var(--accent);
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 0.75rem;
             margin-top: 1rem;
             margin-right: 5px;
+            border: 1px solid rgba(212, 180, 149, 0.2);
         }
 
         /* --- FOOTER --- */
         footer {
             background: var(--footer-bg);
-            color: #E6DMD3;
+            color: var(--text-light);
             text-align: center;
             padding: 3rem 20px;
             margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
         }
-        footer p { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
-        .social-links a { color: white; margin: 0 10px; font-weight: bold; }
+        .social-links a { color: var(--text-main); margin: 0 10px; font-weight: bold; }
+        .social-links a:hover { color: var(--accent); }
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
