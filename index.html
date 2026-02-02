@@ -104,16 +104,20 @@
             gap: 4rem;
             align-items: center;
         }
+        
+        /* UPDATED IMAGE STYLE: Centered Frame */
         .profile-img {
             width: 250px;
             height: 250px;
-            object-fit: cover;
-            border-radius: 50%;
-            box-shadow: 20px 20px 0px rgba(212, 180, 149, 0.2); 
-            opacity: 0.9;
+            object-fit: cover;      
+            border-radius: 50%;     
+            border: 8px solid var(--card-bg); 
+            box-shadow: 0 0 0 4px var(--accent); 
+            opacity: 1;             
             display: block;
-            margin: 0 auto;
+            margin: 0 auto;         
         }
+
         .timeline-item {
             border-left: 2px solid var(--accent);
             padding-left: 1.5rem;
@@ -214,8 +218,7 @@
                 <div class="timeline-item">
                     <div class="timeline-date">Present</div>
                     <strong>BSc (Hons) in Biotechnology</strong><br>
-                    Sri Lanka Institute of Information Technology (SLIIT)
-                </div>
+                    Sri Lanka Institute of Information Technology (SLIIT) </div>
                 <div class="timeline-item">
                     <div class="timeline-date">2024</div>
                     <strong>Secondary Education</strong><br>
@@ -232,8 +235,7 @@
         <div class="card" style="margin-bottom: 2rem;">
             <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
                 <h3>Intern | Allergy, Immunology and Cell Biology Unit</h3>
-                <span style="color: var(--accent); font-weight: bold;">Aug 2025</span>
-            </div>
+                <span style="color: var(--accent); font-weight: bold;">Aug 2025</span> </div>
             <p><strong>University of Sri Jayewardenepura</strong></p>
             <ul style="margin-top: 1rem; padding-left: 1.2rem; list-style: disc; color: var(--text-light);">
                 <li>Conducted laboratory-based research including <strong>blood sampling</strong>, <strong>PBMC separation</strong>, and <strong>TruCulture assays</strong>.</li>
@@ -325,7 +327,7 @@
             </div>
              <div class="card" style="display: inline-block; text-align: left; max-width: 300px; margin: 10px; vertical-align: top;">
                 <h3>Volunteering</h3>
-                <p><strong>Justice for Animals</strong><br>Assisting in spay/neuter programs and thrift shop organization.</p>
+                <p><strong>Justice for Animals</strong><br>Assisted in spay/neuter programs and event support.</p>
             </div>
         </div>
     </section>
